@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ilirus.rolesystem.dao.UserDao">
+  <resultMap id="UserResultMap" type="com.ilirus.rolesystem.model.User">
+    <result column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="sname" jdbcType="VARCHAR" property="sname" />
+  </resultMap>
+
+  <select id="queryAll" resultType="com.ilirus.rolesystem.model.User">
+    select sid, sname from user
+  </select>
+
+</mapper>
