@@ -31,8 +31,12 @@ logging:
     com.ilirus.rolesystem.dao: debug
 
 mybatis:
-  # config-location: classpath:/mybatis-config.xml
-  mapper-locations: classpath:/mapping/*Mapper.xml
+  # config-location 和 configuration 不能同时使用
+  # config-location: classpath:/mybatis/mybatis-config.xml
+  mapper-locations: classpath:/mybatis/mapping/*Mapper.xml
   type-aliases-package: com.ilirus.rolesystem.model
   configuration:
     map-underscore-to-camel-case: true
+    cache-enabled: true
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
